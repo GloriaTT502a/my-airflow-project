@@ -65,8 +65,8 @@ import os
 #from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
 from airflow.models import Variable
-from airflow.providers.postgres.operators.postgres import PostgresOperator
-
+#from airflow.providers.postgres.hooks.postgres import PostgresHook
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator 
 # [END import_module]
 
 def download_price(): 
@@ -245,9 +245,9 @@ with DAG(
         task_id='save_to_database',
         python_callable=save_to_mysql_stage,
     )
-    postgresql_task = PostgresOperator(
+    postgresql_task = SQLExecuteQueryOperator(
         task_id = 'merge_stock_price', 
-        postgres_conn_id = 'demodb', 
+        conn_id = 'demodb', 
         sql = 'merge_stock_price.sql', 
         dag=dag, 
     )

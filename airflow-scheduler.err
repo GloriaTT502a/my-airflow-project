@@ -1,12 +1,210 @@
-[2025-04-08 18:07:23 +0000] [32576] [INFO] Starting gunicorn 23.0.0
-[2025-04-08 18:07:23 +0000] [32576] [ERROR] Connection in use: ('::', 8793)
-[2025-04-08 18:07:23 +0000] [32576] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
-[2025-04-08 18:07:24 +0000] [32576] [ERROR] Connection in use: ('::', 8793)
-[2025-04-08 18:07:24 +0000] [32576] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
-[2025-04-08 18:07:25 +0000] [32576] [ERROR] Connection in use: ('::', 8793)
-[2025-04-08 18:07:25 +0000] [32576] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
-[2025-04-08 18:07:26 +0000] [32576] [ERROR] Connection in use: ('::', 8793)
-[2025-04-08 18:07:26 +0000] [32576] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
-[2025-04-08 18:07:27 +0000] [32576] [ERROR] Connection in use: ('::', 8793)
-[2025-04-08 18:07:27 +0000] [32576] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
-[2025-04-08 18:07:28 +0000] [32576] [ERROR] Can't connect to ('::', 8793)
+Process ForkProcess-2205:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+[2025-04-08 20:03:39 +0000] [27475] [INFO] Starting gunicorn 23.0.0
+[2025-04-08 20:03:39 +0000] [27475] [ERROR] Connection in use: ('::', 8793)
+[2025-04-08 20:03:39 +0000] [27475] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
+Process ForkProcess-2206:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+[2025-04-08 20:03:40 +0000] [27475] [ERROR] Connection in use: ('::', 8793)
+[2025-04-08 20:03:40 +0000] [27475] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
+Process ForkProcess-2207:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+[2025-04-08 20:03:41 +0000] [27475] [ERROR] Connection in use: ('::', 8793)
+[2025-04-08 20:03:41 +0000] [27475] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
+Process ForkProcess-2208:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+[2025-04-08 20:03:42 +0000] [27475] [ERROR] Connection in use: ('::', 8793)
+[2025-04-08 20:03:42 +0000] [27475] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
+Process ForkProcess-2209:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Process ForkProcess-2210:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+[2025-04-08 20:03:43 +0000] [27475] [ERROR] Connection in use: ('::', 8793)
+[2025-04-08 20:03:43 +0000] [27475] [ERROR] connection to ('::', 8793) failed: [Errno 98] Address already in use
+Process ForkProcess-2211:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+[2025-04-08 20:03:44 +0000] [27475] [ERROR] Can't connect to ('::', 8793)
+Process ForkProcess-2212:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Process ForkProcess-2213:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Process ForkProcess-2214:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Process ForkProcess-2215:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Process ForkProcess-2216:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Process ForkProcess-2217:
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/home/gloria/anaconda3/lib/python3.12/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 237, in _run_processor_manager
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 1477, in reload_configuration_for_dag_processing
+  File "/home/gloria/anaconda3/lib/python3.12/importlib/__init__.py", line 130, in reload
+    raise ModuleNotFoundError(f"spec not found for the module {name!r}", name=name)
+ModuleNotFoundError: spec not found for the module 'airflow.config_templates.airflow_local_settings'
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/daemon_utils.py", line 81, in run_command_with_daemon_option
+[2025-04-08 20:03:50 +0000] [3157] [INFO] Handling signal: term
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 59, in <lambda>
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 47, in _run_scheduler_job
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/job.py", line 421, in run_job
+[2025-04-08 20:03:50 +0000] [3159] [INFO] Worker exiting (pid: 3159)
+[2025-04-08 20:03:50 +0000] [3161] [INFO] Worker exiting (pid: 3161)
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/job.py", line 450, in execute_job
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 999, in _execute
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 1138, in _run_scheduler_loop
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 1252, in _do_scheduling
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/retries.py", line 93, in wrapped_function
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/tenacity/__init__.py", line 445, in __iter__
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/tenacity/__init__.py", line 378, in iter
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/tenacity/__init__.py", line 400, in <lambda>
+  File "/home/gloria/anaconda3/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/retries.py", line 102, in wrapped_function
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 1622, in _schedule_all_dag_runs
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/jobs/scheduler_job_runner.py", line 1649, in _schedule_dag_run
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/session.py", line 94, in wrapper
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/dagbag.py", line 221, in get_dag
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/dagbag.py", line 304, in _add_dag_from_db
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/dag.py", line 1780, in subdags
+ModuleNotFoundError: No module named 'airflow.operators'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/bin/airflow", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/__main__.py", line 62, in main
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/providers_configuration_loader.py", line 55, in wrapped_function
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/scheduler_command.py", line 56, in scheduler
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/daemon_utils.py", line 76, in run_command_with_daemon_option
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/daemon/daemon.py", line 397, in __exit__
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/daemon/daemon.py", line 391, in close
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/lockfile/__init__.py", line 204, in __exit__
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/lockfile/pidlockfile.py", line 105, in release
+lockfile.NotMyLock: /home/gloria/workspace/airflow/airflow-scheduler.pid is locked, but not by me
+[2025-04-08 20:03:50 +0000] [3157] [INFO] Shutting down: Master
+Exception ignored in atexit callback: <bound method DaemonContext.close of <daemon.daemon.DaemonContext object at 0x726ed5eeb650>>
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/daemon/daemon.py", line 391, in close
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/lockfile/__init__.py", line 204, in __exit__
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/lockfile/pidlockfile.py", line 105, in release
+lockfile.NotMyLock: /home/gloria/workspace/airflow/airflow-scheduler.pid is locked, but not by me
