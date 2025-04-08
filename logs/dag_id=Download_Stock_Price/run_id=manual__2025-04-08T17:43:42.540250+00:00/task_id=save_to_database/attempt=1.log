@@ -1,0 +1,36 @@
+[2025-04-08T17:43:53.899+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-08T17:43:53.918+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-08T17:43:42.540250+00:00 [queued]>
+[2025-04-08T17:43:53.928+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-08T17:43:42.540250+00:00 [queued]>
+[2025-04-08T17:43:53.929+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-08T17:43:53.944+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): save_to_database> on 2025-04-08 17:43:42.540250+00:00
+[2025-04-08T17:43:53.951+0000] {standard_task_runner.py:72} INFO - Started process 20471 to run task
+[2025-04-08T17:43:53.956+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'manual__2025-04-08T17:43:42.540250+00:00', '--job-id', '28', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmp45ph870c']
+[2025-04-08T17:43:53.957+0000] {standard_task_runner.py:105} INFO - Job 28: Subtask save_to_database
+[2025-04-08T17:43:54.018+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-08T17:43:42.540250+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-08T17:43:54.123+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='save_to_database' AIRFLOW_CTX_EXECUTION_DATE='2025-04-08T17:43:42.540250+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-08T17:43:42.540250+00:00'
+[2025-04-08T17:43:54.125+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-08T17:43:54.125+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-08T17:43:54.125+0000] {logging_mixin.py:190} INFO - Current task name:save_to_database state:running start_date:2025-04-08 17:43:53.919129+00:00
+[2025-04-08T17:43:54.126+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-08T17:43:54.126+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-08T17:43:54.148+0000] {base.py:84} INFO - Retrieving connection 'demodb'
+[2025-04-08T17:43:54.153+0000] {logging_mixin.py:190} INFO - IBM length=22   ['IBM', '2025-03-11 00:00:00-04:00', '255.99000549316406', '256.70001220703125', '245.86000061035156', '248.9499969482422']
+[2025-04-08T17:43:54.163+0000] {logging_mixin.py:190} INFO - 22 record inserted.
+[2025-04-08T17:43:54.163+0000] {logging_mixin.py:190} INFO - GE length=22   ['GE', '2025-03-11 00:00:00-04:00', '189.92999267578125', '193.67999267578125', '188.32000732421875', '191.72000122070312']
+[2025-04-08T17:43:54.172+0000] {logging_mixin.py:190} INFO - 22 record inserted.
+[2025-04-08T17:43:54.172+0000] {logging_mixin.py:190} INFO - AAPL length=22   ['AAPL', '2025-03-11 00:00:00-04:00', '223.80999755859375', '225.83999633789062', '217.4499969482422', '220.83999633789062']
+[2025-04-08T17:43:54.185+0000] {logging_mixin.py:190} INFO - 22 record inserted.
+[2025-04-08T17:43:54.186+0000] {logging_mixin.py:190} INFO - MSFT length=22   ['MSFT', '2025-03-11 00:00:00-04:00', '379.0', '386.0', '376.9100036621094', '380.45001220703125']
+[2025-04-08T17:43:54.195+0000] {logging_mixin.py:190} INFO - 22 record inserted.
+[2025-04-08T17:43:54.195+0000] {logging_mixin.py:190} INFO - Warning: No valid data found in /home/gloria/workspace/airflow/logs/FB.csv
+[2025-04-08T17:43:54.196+0000] {logging_mixin.py:190} INFO - Error: No data loaded for FB
+[2025-04-08T17:43:54.196+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-08T17:43:54.210+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-08T17:43:54.211+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Download_Stock_Price, task_id=save_to_database, run_id=manual__2025-04-08T17:43:42.540250+00:00, execution_date=20250408T174342, start_date=20250408T174353, end_date=20250408T174354
+[2025-04-08T17:43:54.243+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-08T17:43:54.243+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-08T17:43:54.244+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price queued_at:2025-04-08 17:43:42.571288+00:00
+[2025-04-08T17:43:54.244+0000] {logging_mixin.py:190} INFO - Task hostname:instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal operator:PythonOperator
+[2025-04-08T17:43:54.290+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-08T17:43:54.318+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-08T17:43:54.321+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

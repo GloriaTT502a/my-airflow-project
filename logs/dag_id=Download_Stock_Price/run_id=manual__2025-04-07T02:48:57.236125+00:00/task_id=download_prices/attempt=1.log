@@ -1,0 +1,113 @@
+[2025-04-07T02:49:01.033+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T02:49:01.041+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices manual__2025-04-07T02:48:57.236125+00:00 [queued]>
+[2025-04-07T02:49:01.045+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices manual__2025-04-07T02:48:57.236125+00:00 [queued]>
+[2025-04-07T02:49:01.046+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-07T02:49:01.061+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): download_prices> on 2025-04-07 02:48:57.236125+00:00
+[2025-04-07T02:49:01.074+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_prices', 'manual__2025-04-07T02:48:57.236125+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmpuzb2yjds']
+[2025-04-07T02:49:01.075+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask download_prices
+[2025-04-07T02:49:01.077+0000] {logging_mixin.py:190} WARNING - /home/gloria/anaconda3/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=79535) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-07T02:49:01.077+0000] {standard_task_runner.py:72} INFO - Started process 79544 to run task
+[2025-04-07T02:49:01.108+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.download_prices manual__2025-04-07T02:48:57.236125+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-07T02:49:01.352+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='download_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T02:48:57.236125+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T02:48:57.236125+00:00'
+[2025-04-07T02:49:01.353+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-07T02:49:01.353+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-07T02:49:01.353+0000] {logging_mixin.py:190} INFO - Current task name:download_prices state:running start_date:2025-04-07 02:49:01.041741+00:00
+[2025-04-07T02:49:01.353+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-07T02:49:01.354+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-07T02:49:01.808+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-07T02:49:01.808+0000] {logging_mixin.py:190} INFO - (9843, 7)
+[2025-04-07T02:49:01.809+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/workspace/airflow/dags/download_stock_price.py", line 76, in download_price
+    print(os.getcwd())
+         ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+[2025-04-07T02:49:01.823+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-04-07T02:49:01.823+0000] {logging_mixin.py:190} INFO - Task start:2025-04-07 02:49:01.041741+00:00 end:2025-04-07 02:49:01.822981+00:00 duration:0.78124
+[2025-04-07T02:49:01.823+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): download_prices> dag:<DAG: Download_Stock_Price> dagrun:<DagRun Download_Stock_Price @ 2025-04-07 02:48:57.236125+00:00: manual__2025-04-07T02:48:57.236125+00:00, state:running, queued_at: 2025-04-07 02:48:57.265907+00:00. externally triggered: True>
+[2025-04-07T02:49:01.824+0000] {logging_mixin.py:190} INFO - Failure caused by name 'os' is not defined
+[2025-04-07T02:49:01.824+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=Download_Stock_Price, task_id=download_prices, run_id=manual__2025-04-07T02:48:57.236125+00:00, execution_date=20250407T024857, start_date=20250407T024901, end_date=20250407T024901
+[2025-04-07T02:49:01.849+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-07T02:49:01.850+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 5 for task download_prices (name 'os' is not defined; 79544)
+Traceback (most recent call last):
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/workspace/airflow/dags/download_stock_price.py", line 76, in download_price
+    print(os.getcwd())
+         ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+[2025-04-07T02:49:01.895+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-07T02:49:01.908+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T02:49:01.909+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,46 @@
+[2025-04-08T05:09:07.143+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-08T05:09:07.165+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices manual__2025-04-08T05:09:03.797411+00:00 [queued]>
+[2025-04-08T05:09:07.174+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices manual__2025-04-08T05:09:03.797411+00:00 [queued]>
+[2025-04-08T05:09:07.175+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-08T05:09:07.188+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): download_prices> on 2025-04-08 05:09:03.797411+00:00
+[2025-04-08T05:09:07.195+0000] {standard_task_runner.py:72} INFO - Started process 17013 to run task
+[2025-04-08T05:09:07.199+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_prices', 'manual__2025-04-08T05:09:03.797411+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmpcpkrnsy0']
+[2025-04-08T05:09:07.200+0000] {standard_task_runner.py:105} INFO - Job 13: Subtask download_prices
+[2025-04-08T05:09:07.260+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.download_prices manual__2025-04-08T05:09:03.797411+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-08T05:09:07.354+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='download_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-04-08T05:09:03.797411+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-08T05:09:03.797411+00:00'
+[2025-04-08T05:09:07.355+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-08T05:09:07.356+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-08T05:09:07.356+0000] {logging_mixin.py:190} INFO - Current task name:download_prices state:running start_date:2025-04-08 05:09:07.165513+00:00
+[2025-04-08T05:09:07.356+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-08T05:09:07.356+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-08T05:09:07.768+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-08T05:09:07.768+0000] {logging_mixin.py:190} INFO - 21
+[2025-04-08T05:09:07.769+0000] {logging_mixin.py:190} INFO - /
+[2025-04-08T05:09:07.772+0000] {logging_mixin.py:190} INFO - Downloaded IBM
+[2025-04-08T05:09:07.968+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-08T05:09:07.969+0000] {logging_mixin.py:190} INFO - 21
+[2025-04-08T05:09:07.969+0000] {logging_mixin.py:190} INFO - /
+[2025-04-08T05:09:07.971+0000] {logging_mixin.py:190} INFO - Downloaded GE
+[2025-04-08T05:09:08.118+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-08T05:09:08.118+0000] {logging_mixin.py:190} INFO - 21
+[2025-04-08T05:09:08.118+0000] {logging_mixin.py:190} INFO - /
+[2025-04-08T05:09:08.120+0000] {logging_mixin.py:190} INFO - Downloaded AAPL
+[2025-04-08T05:09:08.259+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-08T05:09:08.260+0000] {logging_mixin.py:190} INFO - 21
+[2025-04-08T05:09:08.260+0000] {logging_mixin.py:190} INFO - /
+[2025-04-08T05:09:08.262+0000] {logging_mixin.py:190} INFO - Downloaded MSFT
+[2025-04-08T05:09:10.253+0000] {history.py:247} ERROR - $FB: possibly delisted; no price data found  (period=1mo) (Yahoo error = "No data found, symbol may be delisted")
+[2025-04-08T05:09:10.253+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-08T05:09:10.254+0000] {logging_mixin.py:190} INFO - 0
+[2025-04-08T05:09:10.254+0000] {logging_mixin.py:190} INFO - /
+[2025-04-08T05:09:10.255+0000] {logging_mixin.py:190} INFO - Downloaded FB
+[2025-04-08T05:09:10.255+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-08T05:09:10.268+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-08T05:09:10.269+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Download_Stock_Price, task_id=download_prices, run_id=manual__2025-04-08T05:09:03.797411+00:00, execution_date=20250408T050903, start_date=20250408T050907, end_date=20250408T050910
+[2025-04-08T05:09:10.298+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-08T05:09:10.299+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-08T05:09:10.299+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price queued_at:2025-04-08 05:09:03.841195+00:00
+[2025-04-08T05:09:10.299+0000] {logging_mixin.py:190} INFO - Task hostname:instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal operator:PythonOperator
+[2025-04-08T05:09:10.345+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-08T05:09:10.365+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-08T05:09:10.367+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

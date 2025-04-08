@@ -1,0 +1,175 @@
+[2025-04-07T02:42:33.027+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T02:42:33.035+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-07T02:42:33.040+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-07T02:42:33.040+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-07T02:42:33.058+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): download_prices> on 2025-04-06 00:00:00+00:00
+[2025-04-07T02:42:33.070+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_prices', 'scheduled__2025-04-06T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmp21wdjekz']
+[2025-04-07T02:42:33.072+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask download_prices
+[2025-04-07T02:42:33.073+0000] {logging_mixin.py:190} WARNING - /home/gloria/anaconda3/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=78339) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-04-07T02:42:33.074+0000] {standard_task_runner.py:72} INFO - Started process 78348 to run task
+[2025-04-07T02:42:33.111+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.download_prices scheduled__2025-04-06T00:00:00+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-07T02:42:33.355+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='download_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T00:00:00+00:00'
+[2025-04-07T02:42:33.356+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-07T02:42:33.356+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-07T02:42:33.356+0000] {logging_mixin.py:190} INFO - Current task name:download_prices state:running start_date:2025-04-07 02:42:33.035851+00:00
+[2025-04-07T02:42:33.357+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-07T02:42:33.357+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-07T02:42:33.828+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+[2025-04-07T02:42:33.828+0000] {logging_mixin.py:190} INFO - (9843, 7)
+[2025-04-07T02:42:33.838+0000] {logging_mixin.py:190} INFO -                                  Open        High  ...  Dividends  Stock Splits
+Date                                               ...                         
+1986-03-13 00:00:00-05:00    0.054376    0.062373  ...        0.0           0.0
+1986-03-14 00:00:00-05:00    0.059707    0.062906  ...        0.0           0.0
+1986-03-17 00:00:00-05:00    0.061839    0.063439  ...        0.0           0.0
+1986-03-18 00:00:00-05:00    0.062906    0.063439  ...        0.0           0.0
+1986-03-19 00:00:00-05:00    0.061306    0.061839  ...        0.0           0.0
+...                               ...         ...  ...        ...           ...
+2025-03-31 00:00:00-04:00  372.540009  377.070007  ...        0.0           0.0
+2025-04-01 00:00:00-04:00  374.649994  382.850006  ...        0.0           0.0
+2025-04-02 00:00:00-04:00  377.970001  385.079987  ...        0.0           0.0
+2025-04-03 00:00:00-04:00  374.790009  377.480011  ...        0.0           0.0
+2025-04-04 00:00:00-04:00  364.130005  374.589996  ...        0.0           0.0
+
+[9843 rows x 7 columns]
+[2025-04-07T02:42:33.838+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-07T02:42:33.842+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-07T02:42:33.842+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Download_Stock_Price, task_id=download_prices, run_id=scheduled__2025-04-06T00:00:00+00:00, execution_date=20250406T000000, start_date=20250407T024233, end_date=20250407T024233
+[2025-04-07T02:42:33.860+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-07T02:42:33.861+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-07T02:42:33.861+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price queued_at:2025-04-07 02:42:30.106349+00:00
+[2025-04-07T02:42:33.861+0000] {logging_mixin.py:190} INFO - Task hostname:instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal operator:PythonOperator
+[2025-04-07T02:42:33.892+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-07T02:42:33.901+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T02:42:33.902+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-04-07T04:46:35.641+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T04:46:35.676+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-07T04:46:35.687+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices scheduled__2025-04-06T00:00:00+00:00 [queued]>
+[2025-04-07T04:46:35.688+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-07T04:46:35.708+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): download_prices> on 2025-04-06 00:00:00+00:00
+[2025-04-07T04:46:35.719+0000] {standard_task_runner.py:72} INFO - Started process 99006 to run task
+[2025-04-07T04:46:35.735+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_prices', 'scheduled__2025-04-06T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmpwkke75bj']
+[2025-04-07T04:46:35.737+0000] {standard_task_runner.py:105} INFO - Job 2: Subtask download_prices
+[2025-04-07T04:46:35.879+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.download_prices scheduled__2025-04-06T00:00:00+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-07T04:46:36.053+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='download_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-04-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-06T00:00:00+00:00'
+[2025-04-07T04:46:36.057+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-07T04:46:36.057+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-07T04:46:36.058+0000] {logging_mixin.py:190} INFO - Current task name:download_prices state:running start_date:2025-04-07 04:46:35.677084+00:00
+[2025-04-07T04:46:36.058+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-07T04:46:36.059+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-07T04:46:36.080+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/workspace/airflow/dags/download_stock_price.py", line 71, in download_price
+    stock_list_json = Variable.get("stock_list_json", deserialize_json=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/variable.py", line 148, in get
+    obj = json.loads(var_val)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 28 (char 27)
+[2025-04-07T04:46:36.117+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-04-07T04:46:36.117+0000] {logging_mixin.py:190} INFO - Task start:2025-04-07 04:46:35.677084+00:00 end:2025-04-07 04:46:36.115626+00:00 duration:0.438542
+[2025-04-07T04:46:36.117+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): download_prices> dag:<DAG: Download_Stock_Price> dagrun:<DagRun Download_Stock_Price @ 2025-04-06 00:00:00+00:00: scheduled__2025-04-06T00:00:00+00:00, state:running, queued_at: 2025-04-07 04:46:33.162630+00:00. externally triggered: False>
+[2025-04-07T04:46:36.118+0000] {logging_mixin.py:190} INFO - Failure caused by Expecting value: line 1 column 28 (char 27)
+[2025-04-07T04:46:36.118+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=Download_Stock_Price, task_id=download_prices, run_id=scheduled__2025-04-06T00:00:00+00:00, execution_date=20250406T000000, start_date=20250407T044635, end_date=20250407T044636
+[2025-04-07T04:46:36.171+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-07T04:46:36.171+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 2 for task download_prices (Expecting value: line 1 column 28 (char 27); 99006)
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/workspace/airflow/dags/download_stock_price.py", line 71, in download_price
+    stock_list_json = Variable.get("stock_list_json", deserialize_json=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/variable.py", line 148, in get
+    obj = json.loads(var_val)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 28 (char 27)
+[2025-04-07T04:46:36.192+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-07T04:46:36.224+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T04:46:36.226+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,132 @@
+[2025-04-07T04:51:42.695+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-07T04:51:42.719+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices manual__2025-04-07T04:46:32.679196+00:00 [queued]>
+[2025-04-07T04:51:42.727+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.download_prices manual__2025-04-07T04:46:32.679196+00:00 [queued]>
+[2025-04-07T04:51:42.727+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-04-07T04:51:42.739+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): download_prices> on 2025-04-07 04:46:32.679196+00:00
+[2025-04-07T04:51:42.747+0000] {standard_task_runner.py:72} INFO - Started process 100345 to run task
+[2025-04-07T04:51:42.750+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_prices', 'manual__2025-04-07T04:46:32.679196+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmp9h36le2w']
+[2025-04-07T04:51:42.751+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask download_prices
+[2025-04-07T04:51:42.816+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.download_prices manual__2025-04-07T04:46:32.679196+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-07T04:51:42.920+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='download_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-04-07T04:46:32.679196+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-07T04:46:32.679196+00:00'
+[2025-04-07T04:51:42.922+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-07T04:51:42.922+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-07T04:51:42.926+0000] {logging_mixin.py:190} INFO - Current task name:download_prices state:running start_date:2025-04-07 04:51:42.719731+00:00
+[2025-04-07T04:51:42.926+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-07T04:51:42.926+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-07T04:51:42.949+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/workspace/airflow/dags/download_stock_price.py", line 71, in download_price
+    stock_list_json = Variable.get("stock_list_json", deserialize_json=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/variable.py", line 148, in get
+    obj = json.loads(var_val)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 28 (char 27)
+[2025-04-07T04:51:42.976+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-04-07T04:51:42.976+0000] {logging_mixin.py:190} INFO - Task start:2025-04-07 04:51:42.719731+00:00 end:2025-04-07 04:51:42.975311+00:00 duration:0.25558
+[2025-04-07T04:51:42.976+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): download_prices> dag:<DAG: Download_Stock_Price> dagrun:<DagRun Download_Stock_Price @ 2025-04-07 04:46:32.679196+00:00: manual__2025-04-07T04:46:32.679196+00:00, state:running, queued_at: 2025-04-07 04:46:32.751156+00:00. externally triggered: True>
+[2025-04-07T04:51:42.980+0000] {logging_mixin.py:190} INFO - Failure caused by Expecting value: line 1 column 28 (char 27)
+[2025-04-07T04:51:42.980+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=Download_Stock_Price, task_id=download_prices, run_id=manual__2025-04-07T04:46:32.679196+00:00, execution_date=20250407T044632, start_date=20250407T045142, end_date=20250407T045142
+[2025-04-07T04:51:43.027+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-07T04:51:43.028+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 5 for task download_prices (Expecting value: line 1 column 28 (char 27); 100345)
+Traceback (most recent call last):
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/workspace/airflow/dags/download_stock_price.py", line 71, in download_price
+    stock_list_json = Variable.get("stock_list_json", deserialize_json=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/airflow_env/lib/python3.12/site-packages/airflow/models/variable.py", line 148, in get
+    obj = json.loads(var_val)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/gloria/anaconda3/lib/python3.12/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 28 (char 27)
+[2025-04-07T04:51:43.049+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-07T04:51:43.072+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-07T04:51:43.074+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
