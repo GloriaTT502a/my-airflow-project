@@ -67,25 +67,32 @@ from airflow.operators.python import PythonOperator
 from airflow.models import Variable
 #from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator 
+#from airflow.operators.email.operator import EmailOperator
+
 # [END import_module]
 
 def download_price(): 
 
     stock_list_json = Variable.get("stock_list_json", deserialize_json=True) 
+    valid_tickers = []
     if not stock_list_json:
         raise ValueError("stock_list_json is empty or invalid")
 
     for ticker in stock_list_json: 
         msft = yf.Ticker(ticker) 
         hist = msft.history(period="1mo")
-        print(type(hist)) 
-        print(hist.shape[0])
         
-        print(os.getcwd()) 
+        if hist.shape[0] > 0: 
+            valid_tickers.append(ticker) 
+        else: 
+            continue 
+
         with open(get_file_path(ticker), 'w') as writer: 
             hist.to_csv(writer, index=True) 
 
         print("Downloaded "+ticker)
+
+    return valid_tickers
 
 #download_price()
 
@@ -110,12 +117,15 @@ def load_price_data(ticker):
         return []
 
 
-def save_to_mysql_stage():
+def save_to_mysql_stage(*args, **context):
     # tickers = get_tickers(context)
     # Pulls the return_value XCOM from "pushing_task"
     #tickers = context['ti'].xcom_pull(task_ids='download_prices')
     
-    stock_list_json = Variable.get("stock_list_json", deserialize_json=True) 
+    # stock_list_json = Variable.get("stock_list_json", deserialize_json=True) 
+    tickers = context['ti'].xcom_pull(task_ids='download_price')
+    print(f"received tickers: {tickers}")
+    
     '''
     mydb = psycopg2.connect(
     host="localhost",
@@ -137,7 +147,7 @@ def save_to_mysql_stage():
     )
 
     mycursor = mydb.cursor()
-    for ticker in stock_list_json: 
+    for ticker in tickers: 
         val = load_price_data(ticker)
         if not val or len(val) == 0:  # 检查是否为空
             print(f"Error: No data loaded for {ticker}")
@@ -164,12 +174,6 @@ def save_to_mysql_stage():
 with DAG(
 
     dag_id="Download_Stock_Price",
-
-    # [START default_args]
-
-    # These args will get passed on to each operator
-
-    # You can override them on a per-task basis during operator initialization
 
     default_args={
 
@@ -222,6 +226,7 @@ with DAG(
     start_date=days_ago(2),
 
     catchup=False,
+    max_active_runs=1,
 
     tags=["data"],
 
@@ -238,7 +243,7 @@ with DAG(
 
     """  # otherwise, type it like this
     download_task = PythonOperator(
-        task_id = "download_prices", 
+        task_id = "download_price", 
         python_callable = download_price 
     )
     save_to_mysql_task =PythonOperator(
@@ -251,8 +256,18 @@ with DAG(
         sql = 'merge_stock_price.sql', 
         dag=dag, 
     )
+   
+    #email_task = EmailOperator(
+    #    task_id='send_email', 
+    #    to='gloriatt502@gmail.com', 
+    #    subject='Stock Price is downloaded', 
+    #    html_contents="""<h3>Email Test</h3>""",
+    #    dag=dag  
+    #)
 
-    download_task >> save_to_mysql_task >> postgresql_task
+
+    download_task >> save_to_mysql_task >> postgresql_task 
+    #>> email_task
 
     # [END documentation]
 
