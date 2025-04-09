@@ -5647,3 +5647,184 @@ ModuleNotFoundError: No module named 'airflow.operators'
 2025-04-09 01:28:49,439 INFO - Adopting or resetting orphaned tasks for active dag runs
 2025-04-09 01:33:49,501 INFO - Adopting or resetting orphaned tasks for active dag runs
 2025-04-09 01:38:49,555 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 01:43:49,602 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 01:45:59,736 INFO - Exiting gracefully upon receiving signal 15
+2025-04-09 17:48:32,934 INFO - Loaded executor: SequentialExecutor
+2025-04-09 17:48:33,014 INFO - Starting the scheduler
+2025-04-09 17:48:33,016 INFO - Processing each file at most -1 times
+2025-04-09 17:48:33,029 INFO - Launched DagFileProcessorManager with pid: 11181
+2025-04-09 17:48:33,032 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 17:48:33,036 INFO - Configured default timezone UTC
+2025-04-09 17:48:33,052 INFO - Marked 1 SchedulerJob instances as failed
+2025-04-09 17:53:33,123 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 17:58:33,167 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:03:33,210 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:08:33,259 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:13:33,301 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:18:33,353 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:23:33,396 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:28:33,438 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:33:33,480 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:38:33,520 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:43:33,558 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:48:33,615 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:49:52,289 INFO - DAG Download_Stock_Price is at (or above) max_active_runs (1 of 1), not creating any more runs
+2025-04-09 18:49:52,340 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.download_price scheduled__2025-04-08T18:44:00+00:00 [scheduled]>
+2025-04-09 18:49:52,341 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 18:49:52,341 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.download_price scheduled__2025-04-08T18:44:00+00:00 [scheduled]>
+2025-04-09 18:49:52,344 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.download_price scheduled__2025-04-08T18:44:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 18:49:52,345 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='scheduled__2025-04-08T18:44:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-04-09 18:49:52,345 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'scheduled__2025-04-08T18:44:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:49:52,347 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'scheduled__2025-04-08T18:44:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:50:00,065 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='scheduled__2025-04-08T18:44:00+00:00', try_number=1, map_index=-1)
+2025-04-09 18:50:00,075 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=download_price, run_id=scheduled__2025-04-08T18:44:00+00:00, map_index=-1, run_start_date=2025-04-09 18:49:55.148884+00:00, run_end_date=2025-04-09 18:49:59.319255+00:00, run_duration=4.170371, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=60, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-04-09 18:49:52.342692+00:00, queued_by_job_id=59, pid=30000
+2025-04-09 18:50:00,150 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.save_to_database scheduled__2025-04-08T18:44:00+00:00 [scheduled]>
+2025-04-09 18:50:00,150 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 18:50:00,150 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.save_to_database scheduled__2025-04-08T18:44:00+00:00 [scheduled]>
+2025-04-09 18:50:00,152 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.save_to_database scheduled__2025-04-08T18:44:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 18:50:00,153 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='scheduled__2025-04-08T18:44:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-04-09 18:50:00,153 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'scheduled__2025-04-08T18:44:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:50:00,156 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'scheduled__2025-04-08T18:44:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:50:03,724 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='scheduled__2025-04-08T18:44:00+00:00', try_number=1, map_index=-1)
+2025-04-09 18:50:03,730 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=save_to_database, run_id=scheduled__2025-04-08T18:44:00+00:00, map_index=-1, run_start_date=2025-04-09 18:50:02.671961+00:00, run_end_date=2025-04-09 18:50:02.999084+00:00, run_duration=0.327123, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=61, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-04-09 18:50:00.151494+00:00, queued_by_job_id=59, pid=30031
+2025-04-09 18:50:03,778 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.merge_stock_price scheduled__2025-04-08T18:44:00+00:00 [scheduled]>
+2025-04-09 18:50:03,778 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 18:50:03,779 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.merge_stock_price scheduled__2025-04-08T18:44:00+00:00 [scheduled]>
+2025-04-09 18:50:03,781 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.merge_stock_price scheduled__2025-04-08T18:44:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 18:50:03,781 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='scheduled__2025-04-08T18:44:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-04-09 18:50:03,781 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'scheduled__2025-04-08T18:44:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:50:03,784 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'scheduled__2025-04-08T18:44:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:50:07,456 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='scheduled__2025-04-08T18:44:00+00:00', try_number=1, map_index=-1)
+2025-04-09 18:50:07,462 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=merge_stock_price, run_id=scheduled__2025-04-08T18:44:00+00:00, map_index=-1, run_start_date=2025-04-09 18:50:06.351801+00:00, run_end_date=2025-04-09 18:50:06.729366+00:00, run_duration=0.377565, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=62, pool=default_pool, queue=default, priority_weight=1, operator=SQLExecuteQueryOperator, queued_dttm=2025-04-09 18:50:03.779918+00:00, queued_by_job_id=59, pid=30058
+2025-04-09 18:50:07,506 INFO - Marking run <DagRun Download_Stock_Price @ 2025-04-08 18:44:00+00:00: scheduled__2025-04-08T18:44:00+00:00, state:running, queued_at: 2025-04-09 18:49:52.239946+00:00. externally triggered: False> successful
+2025-04-09 18:50:07,507 INFO - DagRun Finished: dag_id=Download_Stock_Price, execution_date=2025-04-08 18:44:00+00:00, run_id=scheduled__2025-04-08T18:44:00+00:00, run_start_date=2025-04-09 18:49:52.299879+00:00, run_end_date=2025-04-09 18:50:07.507656+00:00, run_duration=15.207777, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-04-08 18:44:00+00:00, data_interval_end=2025-04-09 18:44:00+00:00, dag_hash=e66153a96998ad7e802ecac0603d9ebf
+2025-04-09 18:50:07,514 INFO - Setting next_dagrun for Download_Stock_Price to 2025-04-09 18:44:00+00:00, run_after=2025-04-10 18:44:00+00:00
+2025-04-09 18:52:00,375 INFO - DAG Download_Stock_Price is at (or above) max_active_runs (1 of 1), not creating any more runs
+2025-04-09 18:52:00,412 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.download_price scheduled__2025-04-08T18:52:00+00:00 [scheduled]>
+2025-04-09 18:52:00,413 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 18:52:00,413 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.download_price scheduled__2025-04-08T18:52:00+00:00 [scheduled]>
+2025-04-09 18:52:00,415 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.download_price scheduled__2025-04-08T18:52:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 18:52:00,416 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='scheduled__2025-04-08T18:52:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-04-09 18:52:00,416 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'scheduled__2025-04-08T18:52:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:52:00,419 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'scheduled__2025-04-08T18:52:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:52:08,210 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='scheduled__2025-04-08T18:52:00+00:00', try_number=1, map_index=-1)
+2025-04-09 18:52:08,216 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=download_price, run_id=scheduled__2025-04-08T18:52:00+00:00, map_index=-1, run_start_date=2025-04-09 18:52:02.920521+00:00, run_end_date=2025-04-09 18:52:07.500977+00:00, run_duration=4.580456, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=63, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-04-09 18:52:00.414292+00:00, queued_by_job_id=59, pid=30571
+2025-04-09 18:52:08,279 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.save_to_database scheduled__2025-04-08T18:52:00+00:00 [scheduled]>
+2025-04-09 18:52:08,280 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 18:52:08,280 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.save_to_database scheduled__2025-04-08T18:52:00+00:00 [scheduled]>
+2025-04-09 18:52:08,282 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.save_to_database scheduled__2025-04-08T18:52:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 18:52:08,283 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='scheduled__2025-04-08T18:52:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-04-09 18:52:08,283 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'scheduled__2025-04-08T18:52:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:52:08,286 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'scheduled__2025-04-08T18:52:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:52:11,779 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='scheduled__2025-04-08T18:52:00+00:00', try_number=1, map_index=-1)
+2025-04-09 18:52:11,784 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=save_to_database, run_id=scheduled__2025-04-08T18:52:00+00:00, map_index=-1, run_start_date=2025-04-09 18:52:10.782477+00:00, run_end_date=2025-04-09 18:52:11.070785+00:00, run_duration=0.288308, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=64, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-04-09 18:52:08.281511+00:00, queued_by_job_id=59, pid=30597
+2025-04-09 18:52:11,832 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.merge_stock_price scheduled__2025-04-08T18:52:00+00:00 [scheduled]>
+2025-04-09 18:52:11,833 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 18:52:11,833 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.merge_stock_price scheduled__2025-04-08T18:52:00+00:00 [scheduled]>
+2025-04-09 18:52:11,835 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.merge_stock_price scheduled__2025-04-08T18:52:00+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 18:52:11,836 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='scheduled__2025-04-08T18:52:00+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-04-09 18:52:11,836 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'scheduled__2025-04-08T18:52:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:52:11,839 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'scheduled__2025-04-08T18:52:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 18:52:15,385 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='scheduled__2025-04-08T18:52:00+00:00', try_number=1, map_index=-1)
+2025-04-09 18:52:15,390 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=merge_stock_price, run_id=scheduled__2025-04-08T18:52:00+00:00, map_index=-1, run_start_date=2025-04-09 18:52:14.347479+00:00, run_end_date=2025-04-09 18:52:14.678957+00:00, run_duration=0.331478, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=65, pool=default_pool, queue=default, priority_weight=1, operator=SQLExecuteQueryOperator, queued_dttm=2025-04-09 18:52:11.834290+00:00, queued_by_job_id=59, pid=30628
+2025-04-09 18:52:15,431 INFO - Marking run <DagRun Download_Stock_Price @ 2025-04-08 18:52:00+00:00: scheduled__2025-04-08T18:52:00+00:00, state:running, queued_at: 2025-04-09 18:52:00.368502+00:00. externally triggered: False> successful
+2025-04-09 18:52:15,432 INFO - DagRun Finished: dag_id=Download_Stock_Price, execution_date=2025-04-08 18:52:00+00:00, run_id=scheduled__2025-04-08T18:52:00+00:00, run_start_date=2025-04-09 18:52:00.384301+00:00, run_end_date=2025-04-09 18:52:15.432475+00:00, run_duration=15.048174, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2025-04-08 18:52:00+00:00, data_interval_end=2025-04-09 18:52:00+00:00, dag_hash=ba0213d17d4ba27a475542a9fe1f1b9d
+2025-04-09 18:52:15,437 INFO - Setting next_dagrun for Download_Stock_Price to 2025-04-09 18:52:00+00:00, run_after=2025-04-10 18:52:00+00:00
+2025-04-09 18:53:33,659 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 18:58:33,702 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:03:33,726 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:04:27,155 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.download_price manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>
+2025-04-09 19:04:27,156 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 19:04:27,156 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.download_price manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>
+2025-04-09 19:04:27,158 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.download_price manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 19:04:27,159 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='manual__2025-04-09T19:04:26.406588+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-04-09 19:04:27,159 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'manual__2025-04-09T19:04:26.406588+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 19:04:27,162 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'manual__2025-04-09T19:04:26.406588+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 19:04:35,047 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='manual__2025-04-09T19:04:26.406588+00:00', try_number=1, map_index=-1)
+2025-04-09 19:04:35,053 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=download_price, run_id=manual__2025-04-09T19:04:26.406588+00:00, map_index=-1, run_start_date=2025-04-09 19:04:29.689832+00:00, run_end_date=2025-04-09 19:04:34.177820+00:00, run_duration=4.487988, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=66, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-04-09 19:04:27.157474+00:00, queued_by_job_id=59, pid=34318
+2025-04-09 19:04:35,126 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>
+2025-04-09 19:04:35,127 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 19:04:35,127 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>
+2025-04-09 19:04:35,129 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 19:04:35,130 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='manual__2025-04-09T19:04:26.406588+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-04-09 19:04:35,130 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'manual__2025-04-09T19:04:26.406588+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 19:04:35,133 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'manual__2025-04-09T19:04:26.406588+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 19:04:38,912 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='manual__2025-04-09T19:04:26.406588+00:00', try_number=1, map_index=-1)
+2025-04-09 19:04:38,917 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=save_to_database, run_id=manual__2025-04-09T19:04:26.406588+00:00, map_index=-1, run_start_date=2025-04-09 19:04:37.825968+00:00, run_end_date=2025-04-09 19:04:38.109360+00:00, run_duration=0.283392, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=67, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-04-09 19:04:35.128130+00:00, queued_by_job_id=59, pid=34403
+2025-04-09 19:04:38,974 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>
+2025-04-09 19:04:38,975 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 19:04:38,975 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>
+2025-04-09 19:04:38,977 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T19:04:26.406588+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 19:04:38,978 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='manual__2025-04-09T19:04:26.406588+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-04-09 19:04:38,978 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'manual__2025-04-09T19:04:26.406588+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 19:04:38,981 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'manual__2025-04-09T19:04:26.406588+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 19:04:43,014 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='manual__2025-04-09T19:04:26.406588+00:00', try_number=1, map_index=-1)
+2025-04-09 19:04:43,020 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=merge_stock_price, run_id=manual__2025-04-09T19:04:26.406588+00:00, map_index=-1, run_start_date=2025-04-09 19:04:41.854619+00:00, run_end_date=2025-04-09 19:04:42.150195+00:00, run_duration=0.295576, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=68, pool=default_pool, queue=default, priority_weight=1, operator=SQLExecuteQueryOperator, queued_dttm=2025-04-09 19:04:38.976183+00:00, queued_by_job_id=59, pid=34466
+2025-04-09 19:04:43,068 INFO - Marking run <DagRun Download_Stock_Price @ 2025-04-09 19:04:26.406588+00:00: manual__2025-04-09T19:04:26.406588+00:00, state:running, queued_at: 2025-04-09 19:04:26.436745+00:00. externally triggered: True> successful
+2025-04-09 19:04:43,069 INFO - DagRun Finished: dag_id=Download_Stock_Price, execution_date=2025-04-09 19:04:26.406588+00:00, run_id=manual__2025-04-09T19:04:26.406588+00:00, run_start_date=2025-04-09 19:04:27.126088+00:00, run_end_date=2025-04-09 19:04:43.068983+00:00, run_duration=15.942895, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-04-08 18:52:00+00:00, data_interval_end=2025-04-09 18:52:00+00:00, dag_hash=ba0213d17d4ba27a475542a9fe1f1b9d
+2025-04-09 19:08:33,768 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:13:33,813 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:18:33,853 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:23:33,896 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:28:33,941 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:33:33,989 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:38:34,032 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:43:34,075 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:48:34,128 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:53:34,169 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 19:58:34,211 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 20:03:34,251 INFO - Adopting or resetting orphaned tasks for active dag runs
+2025-04-09 20:06:15,286 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.download_price manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>
+2025-04-09 20:06:15,287 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 20:06:15,288 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.download_price manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>
+2025-04-09 20:06:15,290 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.download_price manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 20:06:15,291 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='manual__2025-04-09T20:06:14.907700+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 3 and queue default
+2025-04-09 20:06:15,291 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'manual__2025-04-09T20:06:14.907700+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 20:06:15,294 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'download_price', 'manual__2025-04-09T20:06:14.907700+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 20:06:23,276 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='download_price', run_id='manual__2025-04-09T20:06:14.907700+00:00', try_number=1, map_index=-1)
+2025-04-09 20:06:23,282 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=download_price, run_id=manual__2025-04-09T20:06:14.907700+00:00, map_index=-1, run_start_date=2025-04-09 20:06:18.252402+00:00, run_end_date=2025-04-09 20:06:22.563614+00:00, run_duration=4.311212, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=69, pool=default_pool, queue=default, priority_weight=3, operator=PythonOperator, queued_dttm=2025-04-09 20:06:15.288916+00:00, queued_by_job_id=59, pid=52043
+2025-04-09 20:06:23,351 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>
+2025-04-09 20:06:23,351 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 20:06:23,352 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>
+2025-04-09 20:06:23,354 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.save_to_database manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 20:06:23,354 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='manual__2025-04-09T20:06:14.907700+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 2 and queue default
+2025-04-09 20:06:23,355 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'manual__2025-04-09T20:06:14.907700+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 20:06:23,358 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'save_to_database', 'manual__2025-04-09T20:06:14.907700+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 20:06:26,925 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='save_to_database', run_id='manual__2025-04-09T20:06:14.907700+00:00', try_number=1, map_index=-1)
+2025-04-09 20:06:26,931 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=save_to_database, run_id=manual__2025-04-09T20:06:14.907700+00:00, map_index=-1, run_start_date=2025-04-09 20:06:25.938891+00:00, run_end_date=2025-04-09 20:06:26.214133+00:00, run_duration=0.275242, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=70, pool=default_pool, queue=default, priority_weight=2, operator=PythonOperator, queued_dttm=2025-04-09 20:06:23.352769+00:00, queued_by_job_id=59, pid=52086
+2025-04-09 20:06:26,982 INFO - 1 tasks up for execution:
+	<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>
+2025-04-09 20:06:26,983 INFO - DAG Download_Stock_Price has 0/16 running and queued tasks
+2025-04-09 20:06:26,983 INFO - Setting the following tasks to queued state:
+	<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>
+2025-04-09 20:06:26,985 INFO - Trying to enqueue tasks: [<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T20:06:14.907700+00:00 [scheduled]>] for executor: SequentialExecutor(parallelism=32)
+2025-04-09 20:06:26,985 INFO - Sending TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='manual__2025-04-09T20:06:14.907700+00:00', try_number=1, map_index=-1) to SequentialExecutor with priority 1 and queue default
+2025-04-09 20:06:26,986 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'manual__2025-04-09T20:06:14.907700+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 20:06:26,989 INFO - Executing command: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'manual__2025-04-09T20:06:14.907700+00:00', '--local', '--subdir', 'DAGS_FOLDER/download_stock_price.py']
+2025-04-09 20:06:30,487 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='Download_Stock_Price', task_id='merge_stock_price', run_id='manual__2025-04-09T20:06:14.907700+00:00', try_number=1, map_index=-1)
+2025-04-09 20:06:30,492 INFO - TaskInstance Finished: dag_id=Download_Stock_Price, task_id=merge_stock_price, run_id=manual__2025-04-09T20:06:14.907700+00:00, map_index=-1, run_start_date=2025-04-09 20:06:29.495462+00:00, run_end_date=2025-04-09 20:06:29.780875+00:00, run_duration=0.285413, state=success, executor=SequentialExecutor(parallelism=32), executor_state=success, try_number=1, max_tries=1, job_id=71, pool=default_pool, queue=default, priority_weight=1, operator=SQLExecuteQueryOperator, queued_dttm=2025-04-09 20:06:26.984245+00:00, queued_by_job_id=59, pid=52113
+2025-04-09 20:06:30,536 INFO - Marking run <DagRun Download_Stock_Price @ 2025-04-09 20:06:14.907700+00:00: manual__2025-04-09T20:06:14.907700+00:00, state:running, queued_at: 2025-04-09 20:06:14.956584+00:00. externally triggered: True> successful
+2025-04-09 20:06:30,537 INFO - DagRun Finished: dag_id=Download_Stock_Price, execution_date=2025-04-09 20:06:14.907700+00:00, run_id=manual__2025-04-09T20:06:14.907700+00:00, run_start_date=2025-04-09 20:06:15.248915+00:00, run_end_date=2025-04-09 20:06:30.537148+00:00, run_duration=15.288233, state=success, external_trigger=True, run_type=manual, data_interval_start=2025-04-08 18:52:00+00:00, data_interval_end=2025-04-09 18:52:00+00:00, dag_hash=ba0213d17d4ba27a475542a9fe1f1b9d
+2025-04-09 20:08:34,294 INFO - Adopting or resetting orphaned tasks for active dag runs

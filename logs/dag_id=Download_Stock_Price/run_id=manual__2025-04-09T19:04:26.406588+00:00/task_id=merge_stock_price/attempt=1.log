@@ -1,0 +1,92 @@
+[2025-04-09T19:04:41.831+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-09T19:04:41.854+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T19:04:26.406588+00:00 [queued]>
+[2025-04-09T19:04:41.864+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T19:04:26.406588+00:00 [queued]>
+[2025-04-09T19:04:41.865+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-09T19:04:41.881+0000] {taskinstance.py:2890} INFO - Executing <Task(SQLExecuteQueryOperator): merge_stock_price> on 2025-04-09 19:04:26.406588+00:00
+[2025-04-09T19:04:41.888+0000] {standard_task_runner.py:72} INFO - Started process 34466 to run task
+[2025-04-09T19:04:41.894+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'Download_Stock_Price', 'merge_stock_price', 'manual__2025-04-09T19:04:26.406588+00:00', '--job-id', '68', '--raw', '--subdir', 'DAGS_FOLDER/download_stock_price.py', '--cfg-path', '/tmp/tmp7mphjp4p']
+[2025-04-09T19:04:41.895+0000] {standard_task_runner.py:105} INFO - Job 68: Subtask merge_stock_price
+[2025-04-09T19:04:41.958+0000] {task_command.py:467} INFO - Running <TaskInstance: Download_Stock_Price.merge_stock_price manual__2025-04-09T19:04:26.406588+00:00 [running]> on host instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal
+[2025-04-09T19:04:42.061+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='airflow@example.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='Download_Stock_Price' AIRFLOW_CTX_TASK_ID='merge_stock_price' AIRFLOW_CTX_EXECUTION_DATE='2025-04-09T19:04:26.406588+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-09T19:04:26.406588+00:00'
+[2025-04-09T19:04:42.064+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-09T19:04:42.064+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-09T19:04:42.064+0000] {logging_mixin.py:190} INFO - Current task name:merge_stock_price state:running start_date:2025-04-09 19:04:41.854619+00:00
+[2025-04-09T19:04:42.065+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price and current dag run status:running
+[2025-04-09T19:04:42.065+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-09T19:04:42.065+0000] {sql.py:296} INFO - Executing: -- update the existing rows 
+UPDATE public.stock_prices p
+SET 
+    open_price = s.open_price,
+    high_price = s.high_price,
+    low_price = s.low_price,
+    close_price = s.close_price,
+    updated_at = now()
+FROM public.stock_prices_stage s
+WHERE p.ticker = s.ticker
+AND p.as_of_date = s.as_of_date;
+
+-- inserting new rows 
+INSERT INTO stock_prices 
+(ticker, as_of_date, open_price, high_price, low_price, close_price)
+SELECT 
+    s.ticker, 
+    s.as_of_date, 
+    s.open_price, 
+    s.high_price, 
+    s.low_price, 
+    s.close_price
+FROM stock_prices_stage s
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM stock_prices p 
+    WHERE p.ticker = s.ticker 
+    AND p.as_of_date = s.as_of_date
+);
+
+-- truncate the stage table; 
+truncate table stock_prices_stage; 
+
+[2025-04-09T19:04:42.079+0000] {base.py:84} INFO - Retrieving connection 'demodb'
+[2025-04-09T19:04:42.094+0000] {base.py:84} INFO - Retrieving connection 'demodb'
+[2025-04-09T19:04:42.105+0000] {sql.py:624} INFO - Running statement: -- update the existing rows 
+UPDATE public.stock_prices p
+SET 
+    open_price = s.open_price,
+    high_price = s.high_price,
+    low_price = s.low_price,
+    close_price = s.close_price,
+    updated_at = now()
+FROM public.stock_prices_stage s
+WHERE p.ticker = s.ticker
+AND p.as_of_date = s.as_of_date;
+
+-- inserting new rows 
+INSERT INTO stock_prices 
+(ticker, as_of_date, open_price, high_price, low_price, close_price)
+SELECT 
+    s.ticker, 
+    s.as_of_date, 
+    s.open_price, 
+    s.high_price, 
+    s.low_price, 
+    s.close_price
+FROM stock_prices_stage s
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM stock_prices p 
+    WHERE p.ticker = s.ticker 
+    AND p.as_of_date = s.as_of_date
+);
+
+-- truncate the stage table; 
+truncate table stock_prices_stage; 
+, parameters: None
+[2025-04-09T19:04:42.149+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-09T19:04:42.150+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=Download_Stock_Price, task_id=merge_stock_price, run_id=manual__2025-04-09T19:04:26.406588+00:00, execution_date=20250409T190426, start_date=20250409T190441, end_date=20250409T190442
+[2025-04-09T19:04:42.188+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-09T19:04:42.189+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-09T19:04:42.189+0000] {logging_mixin.py:190} INFO - Dag name:Download_Stock_Price queued_at:2025-04-09 19:04:26.436745+00:00
+[2025-04-09T19:04:42.190+0000] {logging_mixin.py:190} INFO - Task hostname:instance-20250307-222520.us-central1-a.c.esoteric-realm-448604-v0.internal operator:SQLExecuteQueryOperator
+[2025-04-09T19:04:42.230+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-09T19:04:42.260+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-09T19:04:42.263+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

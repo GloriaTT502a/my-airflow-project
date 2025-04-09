@@ -71,8 +71,20 @@ from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
 # [END import_module]
 
-def download_price(): 
+def download_price(**context): 
 
+    # 从 context 中获取宏值
+    ds = context['ds']
+    ds_nodash = context['ds_nodash']
+    next_ds = context['next_ds']
+    yesterday_ds = context['yesterday_ds']
+    tomorrow_ds = context['tomorrow_ds']
+    
+    print(f"Execution Date is {ds}, {ds_nodash}")
+    print(f"Next DS: {next_ds}")
+    print(f"Yesterday DS: {yesterday_ds}")
+    print(f"Tomorrow DS: {tomorrow_ds}") 
+    
     stock_list_json = Variable.get("stock_list_json", deserialize_json=True) 
     valid_tickers = []
     if not stock_list_json:
@@ -221,7 +233,8 @@ with DAG(
 
     description="Download stock price and save to local csv files. ",
 
-    schedule=timedelta(days=1),
+    #schedule=timedelta(days=1),
+    schedule_interval='52 18 * * *',
 
     start_date=days_ago(2),
 

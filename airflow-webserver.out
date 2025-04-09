@@ -1,0 +1,1 @@
+[2025-04-09T18:42:29.372+0000] {webserver_command.py:258} ERROR - [4 / 3] Some workers seem to have died and gunicorn did not restart them as expected
